@@ -32,7 +32,7 @@ void writeToFile(double readings[], int count, int warnings[]) {
     for (int i = 0; i < count; i++) {
         fprintf("Classroom #%d: %s", i + 1, warnings[i] ? "In Range" : "Warning");
     }
-    close(*file);
+    fclose(file);
 }
 
 int isOutOfRange(double temperature, int upper, int lower) {
@@ -88,7 +88,7 @@ int main(void) {
         }
         char choice;
         printf("Do you want to change the range for acceptable temperatures? (y/n)");
-        scanf('%c', &choice);
+        scanf("%c", &choice);
 
         if (choice == 'y') {
             printf("Enter the Upper Bound");

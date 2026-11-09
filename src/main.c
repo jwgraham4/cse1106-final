@@ -30,7 +30,7 @@ void writeToFile(double readings[], int count, int warnings[]) {
         return;
     }
     for (int i = 0; i < count; i++) {
-        fprintf("Classroom #%d: %s", i +1, warnings[i] ? "In Range" : "Warning");
+        fprintf("Classroom #%d: %s", i + 1, warnings[i] ? "In Range" : "Warning");
     }
     close(file);
 }
